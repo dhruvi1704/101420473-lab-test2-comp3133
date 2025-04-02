@@ -14,9 +14,6 @@ This Angular application displays a list of **SpaceX launches** using the SpaceX
 - Click a mission image to view detailed info
 - Navigate back using a **Back** button
 
-## 🔗 Hosted Link
-👉 [Live App on Vercel](https://your-vercel-link.vercel.app) *(replace with your deployed link)*
-
 ## 📁 Features Implemented
 - Mission List (`missionlist` component)
 - Mission Filter by Year / Launch / Landing
