@@ -1,0 +1,15 @@
+/* Optional external styling, minimal since inline used above */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin-top: 25px;
+  }
+  
+  p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  

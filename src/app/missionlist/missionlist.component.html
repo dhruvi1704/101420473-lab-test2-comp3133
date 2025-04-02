@@ -1,0 +1,42 @@
+<h1>COMP 3133 | Lab Test2 | SpaceX API</h1>
+<h2>Mission List</h2>
+
+<form (ngSubmit)="filterMissions()" #filterForm="ngForm" autocomplete="off">
+  <div style="margin-bottom: 1rem;">
+    <label>Filter by Launch Year:</label>
+    <input type="text" name="launchYear" [(ngModel)]="launchYear" />
+    <button mat-button type="submit">Filter</button>
+  </div>
+
+  <div style="margin-bottom: 1rem;">
+    <strong>Launch</strong><br />
+    <input type="radio" name="launch" value="true" (change)="filterLaunch(true)"> Successful
+    <input type="radio" name="launch" value="false" (change)="filterLaunch(false)"> Failed
+  </div>
+
+  <div style="margin-bottom: 1rem;">
+    <strong>Landing</strong><br />
+    <input type="radio" name="landing" value="true" (change)="filterLanding(true)"> Successful
+    <input type="radio" name="landing" value="false" (change)="filterLanding(false)"> Failed
+  </div>
+
+  <div style="margin-bottom: 1rem;">
+    <button mat-raised-button type="button" (click)="resetFilters()">Reset Filters</button>
+  </div>
+</form>
+
+<!-- Show cards only if filtered results exist -->
+<div *ngFor="let mission of filteredMissions" style="background-color: lightblue; margin: 10px; padding: 10px; border: 2px solid black;">
+    <img
+    [src]="mission.links.mission_patch_small"
+    width="100"
+    height="100"
+    style="cursor: pointer"
+    (click)="goToDetails(mission.flight_number)"
+  />
+  
+  <h2>{{ mission.mission_name }}</h2>
+  <p>{{ mission.details }}</p>
+</div>
+
+
